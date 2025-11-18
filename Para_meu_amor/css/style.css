@@ -1,0 +1,170 @@
+/* Importação das fontes */
+/* 'Pacifico' para o título e 'Poppins' para o corpo */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;700&display=swap');
+
+:root {
+    --primary-color: #FF1493; /* Rosa Choque / Vermelho Intenso para corações e destaque */
+    --secondary-color: #333;
+    --text-color: #f0f0f0;
+    --background-color: #000;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(red);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative; /* Para o posicionamento absoluto da decoração */
+}
+
+/* --- Decoração de Fundo (Corações e Kuromi) --- */
+.background-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none; /* Garante que os cliques passem por eles */
+}
+
+/* Estilo para a decoração (Coração e Kuromi) */
+.decor-item {
+    position: absolute;
+    color: var(black);
+    font-size: 2em; /* Corações */
+    opacity: 0.8;
+    animation: float 15s infinite linear;
+    text-shadow: 0 0 10px var(rgb(82, 16, 82));
+}
+
+.decor-kuromi {
+    font-size: 1.5em; /* Kuromis */
+    color: #fff; /* Cor do emoji Kuromi (que geralmente é preto/branco) */
+    opacity: 0.6;
+    animation: float 20s infinite linear reverse;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.2; }
+    50% { opacity: 0.8; }
+    100% { transform: translateY(-100vh); opacity: 0.2; }
+}
+/* Fim da Decoração de Fundo */
+
+
+/* --- Layout Principal --- */
+.container {
+    background: rgba(18, 18, 18, 0.9); /* Fundo semi-transparente para destaque */
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.5); /* Sombra rosa/vermelha */
+    padding: 40px;
+    text-align: center;
+    max-width: 700px;
+    width: 90%;
+    z-index: 1; /* Acima da decoração de fundo */
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    color: var(black);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px #000;
+}
+
+/* --- Seção da Foto --- */
+.photo-section {
+    margin: 30px 0;
+}
+
+.photo-placeholder {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 15px;
+    border-radius: 50%; /* Foto em círculo */
+    overflow: hidden;
+    border: 8px solid var(rgb(221, 192, 192));
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+    background-color: var(rgb(19, 18, 18));
+}
+
+#mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    display: block;
+}
+
+.image-tip {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* --- Seção da Mensagem Editável --- */
+.message-section h2 {
+    color: var(rgb(22, 21, 21));
+    margin-top: 30px;
+}
+
+.editable-text {
+    background: var(rgb(228, 217, 217));
+    border: 1px solid var(rgb(34, 33, 33));
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    min-height: 150px;
+    cursor: text;
+    transition: all 0.3s ease;
+}
+
+.editable-text:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(rgb(32, 32, 32));
+    border-color: #fff;
+}
+
+.editable-text p {
+    margin: 5px 0;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.signature {
+    font-style: italic;
+    font-weight: bold !important;
+    margin-top: 20px !important;
+    text-align: right !important;
+    color: var(white);
+}
+
+button {
+    background-color: var(rgb(119, 119, 179));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e00080;
+}
+
+.save-info {
+    font-size: 0.9em;
+    color: #4CAF50; /* Verde para feedback de sucesso */
+    height: 1em;
+    margin-top: 10px;
+}
